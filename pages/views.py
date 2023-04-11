@@ -1,7 +1,7 @@
 from rest_framework.response import Response
 from django.shortcuts import render
-from .models import Activity,Book,Video,Data_of_Category,app_Question
-from .serializers import HoppiesSerializer,BookSerializer,VideoSerializer,app_QuestionSerializer,data_of_CategorySerializer
+from .models import Activity,Book,Video,Data_of_Category,app_Question,Category
+from .serializers import HoppiesSerializer,BookSerializer,VideoSerializer,app_QuestionSerializer,data_of_CategorySerializer,CategorySerializer
 from rest_framework.decorators import APIView
 # from rest_framework import status
 # from django.http import JsonResponse
@@ -10,7 +10,9 @@ from rest_framework.decorators import APIView
 from rest_framework import generics
 from rest_framework import viewsets
 
-
+class CategoryViewSet(viewsets.ModelViewSet):
+   queryset=Category.objects.all()
+   serializer_class=CategorySerializer
 
 class ActivitiesViewSet(viewsets.ModelViewSet):
    queryset=Activity.objects.all()

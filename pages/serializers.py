@@ -1,5 +1,9 @@
 from rest_framework import serializers
 from .models import Book,Activity,Category,Video,app_Question,Data_of_Category
+class CategorySerializer(serializers. ModelSerializer):
+    class Meta:
+        model=Category
+        fields='__all__'
 class HoppiesSerializer(serializers. ModelSerializer):
     class Meta:
         model=Activity
