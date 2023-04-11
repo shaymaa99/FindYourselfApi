@@ -13,7 +13,10 @@ from rest_framework import viewsets
 class CategoryViewSet(viewsets.ModelViewSet):
    queryset=Category.objects.all()
    serializer_class=CategorySerializer
-
+class CategoryViewSet_pk(viewsets.ModelViewSet):
+   queryset=Category.objects.all()
+   serializer_class=CategorySerializer
+   lookup_field='id'
 class ActivitiesViewSet(viewsets.ModelViewSet):
    queryset=Activity.objects.all()
    serializer_class=HoppiesSerializer
